@@ -1,0 +1,516 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <!-- Path to CSS + JS will change if not using firebase -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- May need to look into Font Awesome if not showing up on new host -->
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <style>
+        /* Hide all steps by default: */
+        /* If this directive is commented out you can view all sections on single page w/o Next Button + Vaidation (for testing purposes) */
+        .page {
+            display: none;
+        }
+
+        [type=radio],
+        [type=select]
+
+        {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+    </style>
+</head>
+
+<body>
+  <form id="form" name="form" action="">
+    <div id="container">
+
+      <!-------- INTRO -------->
+      <div id="page-0" class="page">
+        <div class="navbar">
+          <span style="position: absolute; left: 20px; top:20px; color: #fff;">Lightstream </span><span class="" style="position: absolute; right: 20px;top:20px; color: #fff;" aria-hidden="true">Need Help?</span>
+        </div>
+        <div class="form--body">
+        <div class="large--text">
+          <h1>A modern savings solution for your needs.</h1>
+        </div>
+        <div class="body--text">
+
+          <p>LightStream is introducing a new FDIC-insured savings account with one of the nation’s best APY.*</p>
+          <p>Enjoy the ability to create accounts for specific savings goals and make unlimited deposits and withdrawals
+            to and from any account.</p>
+          <h2 style="color:#00285F">0.5% APY*</h2>
+          <p>Among the best in the nation, check out our rates vs. other banks here.<a href="#">here</a></p>
+
+          <h2 style="color:#00285F">No minimum balance or fees</h2>
+          <p>Enjoy all of the perks of a high-yield savings account without any of penalties.</p>
+          <h2 style="color:#00285F">Quick and simple application</h2>
+          <p>In 5 minutes, you can start organizing and saving your finances. </p>
+          <h2 style="color:#00285F">Coming up soon</h2>
+          <p>We already have unlimited withdrawals, but soon you could spend and earn directly with your Rewards debit card.*</p>
+
+        </div>
+        </div>
+      </div>
+      <!------- PAGE 1 ------->
+      <fieldset id="page-1" class="page">
+        <!-- New NavBar -->
+        <div class="navbar">
+          <p>Step 1 of 4: Create your profile</p>
+        </div>
+        <progress id="progress" value="25" max="100"></progress>
+
+        <div class="form--body">
+          <div class="large--text">
+            <h1>Save, organize, and spend with the Everything Account.</h1>
+          </div>
+          <div class="body--text">
+            <p>Already a Lightstream customer? <a href="#" class="btn--small">Sign In</a></p>
+            <h2>All fields  unless otherwise noted.</h2>
+
+            <div class="input-group">
+              <input class="input-field" type="email" id="email" name="Email" placeholder="" onblur="checkEmail(this), emailData()" >
+              <label class="input-label">Email Address</label>
+              <h4>Your email address is also your user ID</h4>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
+
+            </div>
+
+            <div class="input-group">
+              <input class="input-field" id="firstName" name="First Name" placeholder="" onkeyup="" oninput=""
+                onblur="checkIfEmpty(this), nameData()" >
+              <label class="input-label">First Name</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
+            </div>
+            <div class="input-group">
+
+              <input class="input-field" id="lastName" name="Last Name" placeholder="" oninput=""
+                onblur="checkIfEmpty(this), nameData()" >
+              <label class="input-label" id="lastNameLabel">Last Name</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
+            </div>
+          </div>
+          <div class="input-group">
+            <input class="input-field" type="password" id="password" name="password" placeholder=""
+              onblur="checkPasswordsMatch(password, password2)" onkeyup="passwordValidate(this)"
+              oninput="checkInvalidity(this); ">
+            <label class="input-label">Password</label>
+            <span id="show">Show</span>
+            <div class="password-policies">
+              <div class="policy-length">
+                <i class="fa fa-circle fa-valid" name="pass-circle"
+                  style="font-size:10px;color:transparent;border:1px solid grey;border-radius:100%;height:8px;width:8px;"></i>
+                <i class="fa fa-check" style="font-size:12px;color:#2ecc71;height:8px;width:8px;"></i>
+                <i class="fa fa-times" style="font-size:12px;color:red;height:8px;width:8px;"></i>
+                Must be between 8-20 characters
+              </div>
+              <div class="policy-number">
+                <i class="fa fa-circle fa-valid " name="pass-circle"
+                  style="font-size:10px;color:transparent;border:1px solid grey;border-radius:100%;height:8px;width:8px;"></i>
+                <i class="fa fa-check" style="font-size:12px;color:#2ecc71;height:8px;width:8px;"></i>
+                <i class="fa fa-times" style="font-size:12px;color:red;height:8px;width:8px;"></i>
+                Must contain at least 1 letter and 1 number
+              </div>
+              <div class="policy-special">
+                <i class="fa fa-circle fa-valid" name="pass-circle"
+                  style="font-size:10px;color:transparent;border:1px solid grey;border-radius:100%;height:8px;width:8px;"></i>
+                <i class="fa fa-check" style="font-size:12px;color:#2ecc71;height:8px;width:8px;"></i>
+                <i class="fa fa-times" style="font-size:12px;color:red;height:8px;width:8px;"></i>
+                It can only consist of numbers, letters, ! & $ - . _
+              </div>
+            </div>
+            <!-- This probably needs to be on change after error is thrown by Password2 -->
+
+            <small>Error Message</small>
+
+          </div>
+          <div class="input-group">
+
+            <input type="password" id="password2" name="Password Confirm" class="input-field" placeholder=""
+              oninput="checkPasswordsMatch(password, password2)">
+            <label class="input-label">Re-Enter Your Password</label>
+            <span id="show2">Show</span>
+            <small>Error Message</small>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label"></label>
+            <select id="security-question" name="Security Question">
+              <option value="0">Please select a question</option>
+              <option value="Your first pet?">Your First Pet?</option>
+              <option value="Mother's maiden name?">Mother's maiden name?</option>
+            </select>
+            <small>Error Message</small>
+          </div>
+          <div class="input-group">
+            <input class="input-field" id="security-answer" name="Security Answer" placeholder=""
+              onblur="checkIfEmpty(this)">
+            <label class="input-label">Security Answer</label>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Message</small>
+          </div>
+
+          <div class="input-group">
+            <input class="input-check" type="checkbox" name="terms1"  placeholder="">
+            <label class="check-label"></label>
+            <h5 class="termsText">I have read, understood, and consent to LightStream Bank’s <a href="#"
+                class="smallLink" onclick="legalDoc()">ESIGN Agreement</a>.</h5>
+            <i class="fas fa-check-circle" style="top:15px;"></i>
+            <i class="fas fa-exclamation-circle" style="top:15px;"></i>
+            <small style="bottom:0;">Error Message</small>
+          </div>
+          <div class="input-group">
+            <input class="input-check" type="checkbox" name="terms2"  placeholder="">
+            <label class="check-label"></label>
+            <h5 class="termsText">I have read, understood, and consent to LightStream Bank’s <a href="#" class="smallLink"
+              onclick="legalDoc()">Privacy Policy &
+              Practices</a> and <a href="#" class="smallLink" onclick="legalDoc()">Terms and Conditions</a>.</h5>
+            <i class="fas fa-check-circle" style="top:15px;"></i>
+            <i class="fas fa-exclamation-circle" style="top:15px;"></i>
+            <small style="bottom:0;">Error Message</small>
+          </div>
+        </div>
+    </div>
+    </fieldset>
+    <!------- PAGE 2 ------->
+    <fieldset id="page-2" class="page">
+      <div class="navbar">
+        <p><i class="fas fa-arrow-left nav" style="position: absolute; left: 20px;" onclick="Prev(1);"></i>Step 2 of 4: Contact Information </p>
+      </div>
+      <progress id="progress" value="50" max="100"></progress>
+      <div class="form--body">
+        <div class="large--text">
+          <h1>Where can we send your documents and reminders?</h1>
+        </div>
+        <div class="body--text">
+          <h2>Search for your address and enter your primary phone number.</h2>
+          <div class="input-group">
+            <input class="input-field" id="address" name="Address" placeholder="" oninput="checkIfEmpty(this)"
+              onblur="addressData()">
+            <label class="input-label">Address</label>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Message</small>
+          </div>
+          <div class="input-group">
+            <input class="input-field" id="address2" name="Address 2" placeholder="" oninput="checkIfEmpty(this)"
+              onblur="addressData()">
+            <label class="input-label">Apt, Suite</label>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Message</small>
+          </div>
+          <div class="input-group">
+            <input class="input-field" id="city" name="City" placeholder="" oninput="checkIfEmpty(this)"
+              onblur="addressData()">
+            <label class="input-label">City</label>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Message</small>
+          </div>
+          <div class="input-group">
+            <input class="input-field" id="state" name="State" placeholder="" oninput="checkIfEmpty(this)"
+              onblur="addressData()">
+            <label class="input-label">State</label>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Message</small>
+          </div>
+          <div class="input-group">
+            <input class="input-field" id="zip" name="Zip Code" placeholder="" oninput="checkIfEmpty(this)"
+              onblur="addressData()">
+            <label class="input-label">Zip Code</label>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Message</small>
+          </div>
+          <div class="input-group">
+            <input class="input-field" type="text" id="phone" name="Phone" placeholder="" onfocus="numberOnly(this)"
+              oninput="checkNumberInput(this, 10, 10)" onblur="phoneData()">
+            <label class="input-label">Phone Number</label>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <h4>Please use your best contact number in case we need to verify information. As part of our <a href="#" class="smallLink" onclick="legalDoc()">TCPA agreement</a>, your number cannot be used for marketing purposes.</h4>
+            <small>Error Message</small>
+
+          </div>
+
+        </div>
+      </div>
+    </fieldset>
+    <!------- PAGE 3 ------->
+    <fieldset id="page-3" class="page">
+      <div class="navbar">
+        <p><i class="fas fa-arrow-left nav" style="position: absolute; left: 20px;" onclick="Prev(1);"></i>Step 3 of 4: Identity</p>
+      </div>
+      <progress id="progress" value="75" max="100"></progress>
+      <div class="form--body">
+        <div class="large--text">
+          <h1>These details are to identify you and run security checks.</h1>
+        </div>
+        <div class="body--text">
+          <h2>You must be 18 and over and a US Citizen or Permanent resident to apply. All entered information is secured and encrypted.</h2>
+          <!-- <div class="input-group">
+
+              <div id="add-job">
+                <select id="job" name="Job" onchange="jobData()">
+                  <option value="Job 1">Occupation</option>
+                  <option value="Job 2">Job 2</option>
+                  <option value="Job 3">Job 3</option>
+                  <option value="Job 4">Job 4</option>
+                  <option value="Job 5">Job 5</option>
+                  <option value="Job 6">Job 6</option>
+                  <option value="Job 7">Job 7</option>
+                  <option value="Job 8">Job 8</option>
+                  <option value="Job 9">Job 9</option>
+                  <option value="Job 10">Job 10</option>
+                </select>
+              </div>
+
+              <button class="addbutton" id="add--job"> + Add another source of income</button>
+            </div> -->
+            <div class="input-group">
+              <label class="input-label"></label>
+              <input class="input-field" type="date" id="dob" name="Date of Birth" placeholder="" onfocus=""
+                onblur="dobData()">
+              <!--type="text" onfocus="(this.type='date')"
+                        <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                  onblur="checkIfEmpty(this)"-->
+              <small>Error Message</small>
+            </div>
+            <div class="input-group">
+              <label class="input-label"></label>
+              <div id="add-country">
+                <select id="country" name="Country" onchange="onSelectChangeCountry(this), countryData()">
+                  <!-- onchange="countryData()" -->
+                  <option value="0">Citizenship</option>
+                  <option value="United States">United States</option>
+                  <option value="Mexico">Mexico</option>
+                  <option value="France">France</option>
+                  <option value="Belgium">Belgium</option>
+                </select>
+                <!-- <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i> -->
+                <i id="errorTriangle" class="fas fa-exclamation-triangle"></i><small style="bottom:0;">Error
+                  Message</small>
+              </div>
+              <button id="add--country" class="addbutton"> + Add another country of citizenship</button>
+            </div>
+            <div class="input-group">
+              <input id="SSN" name="Social Security Number" class="input-field" onblur="ssnData(this)" />
+              <label class="input-label">Social Security Number</label>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <h4>We are  to report the interest that you earn to the IRS so that you may be taxed on that income</h4>
+              <small>Error Message</small>
+            </div>
+          <div class="input-group">
+            <input class="input-field" id="job" name="Job" onblur="jobData(), checkIfEmpty(this); ">
+            <label class="input-label">Occupation</label>
+            <i class="fas fa-check-circle" style="top:15px;"></i>
+            <i class="fas fa-exclamation-circle" style="top:15px;"></i>
+            <h4>We use your occupation as part of our efforts to reduce anti-money laundering activities</h4>
+            <small style="bottom:0;">Error Message</small>
+
+            <!-- <div class="input-group">
+              <input class="input-field" type="" id="income" name="Income" placeholder="" onkeyup="numberOnly(this)"
+                onblur="incomeData(),checkIfEmpty(this); ">
+              <label class="input-label">Annual Income</label>
+              <i class="fas fa-check-circle" style="top:15px;"></i>
+              <i class="fas fa-exclamation-circle" style="top:15px;"></i>
+              <small style="bottom:0;">Error Message</small>
+            </div> -->
+            <div>
+              <h5><b>Important information about procedures for opening a new account:</b>  To help the government fight the funding of terrorism and money laundering activities, federal law requires all financial institutions to obtain, verify, and record information that identifies each person who opens an account. What this means for you: When you open an account, we will use your name, address, date of birth and other information provided to identify you.</h5>
+            </div>
+
+          </div>
+        </div>
+    </fieldset>
+
+    <!-- Submit Page -->
+    <fieldset id="page-end" class="page">
+      <div class="navbar">
+        <p><i class="fas fa-arrow-left nav" style="position: absolute; left: 20px;"></i>Step 4 of 4: Review and submit
+        </p>
+      </div>
+      <progress id="progress" value="100" max="100"></progress>
+      <div class="form--body">
+        <div class="large--text">
+          <h1>Verify details</h1>
+        </div>
+        <div class="body--text">
+          <p>Make sure everything is correctly entered and you haven’t made any mistakes.</p>
+
+          <div class="form--output">
+            <table>
+              <tr>
+                <th>Personal Info <a href="#" id="personalChange" class="smallLink" onclick="editPersonal()">[Edit]</a>
+                </th>
+                <th></th>
+              </tr>
+              <tr>
+                <td class="tdLabel">Full Name</td>
+                <td id="nameDataTest" class="tdData">Form Data Goes Here</td>
+              </tr>
+              <tr>
+                <td class="tdLabel">Email</td>
+                <td id="emailDataTest" class="tdData">Form Data Goes Here</td>
+              </tr>
+              <tr>
+                <td class="tdLabel">Address</td>
+                <td id="addressDataTest" class="tdData">Form Data Goes Here</td>
+              </tr>
+              <tr>
+                <td class="tdLabel">Phone Number</td>
+                <td id="phoneDataTest" class="tdData">Form Data Goes Here</td>
+              </tr>
+            </table>
+          </div>
+          <div class="form--output">
+            <table>
+              <tr>
+                <th>Identity Info <a href="#" id="idChange" class="smallLink" onclick="editID()">[Edit]</a></th>
+                <th></th>
+              </tr>
+              <tr>
+                <td class="tdLabel">Date of Birth</td>
+                <td id="dobDataTest" class="tdData">Form Data Goes Here</td>
+              </tr>
+              <tr>
+                <td class="tdLabel">Citizenship</td>
+                <td id="countryDataTest" class="tdData">Form Data Goes Here</td>
+              </tr>
+              <tr>
+                <td class="tdLabel">SSN</td>
+                <td id="ssnDataTest" class="tdData">Form Data Goes Here</td>
+              </tr>
+
+              <tr>
+                <td class="tdLabel">Occupation</td>
+                <td id="jobDataTest" class="tdData">Form Data Goes Here</td>
+              </tr>
+            </table>
+          </div>
+
+
+
+          <div class="input-group">
+            <input class="input-check" type="checkbox" name="terms1"  placeholder="">
+            <label class="check-label"></label>
+            <h5 class="termsText">I have read, understood, and consent to LightStream Bank’s <a href="#"
+                class="smallLink" onclick="legalDoc()">Credit Authorization Act</a>.</h5>
+            <i class="fas fa-check-circle" style="top:15px;"></i>
+            <i class="fas fa-exclamation-circle" style="top:15px;"></i>
+            <small style="bottom:0;">Error Message</small>
+          </div>
+
+          <div class="legal">
+            <h5 class="legalText">
+              Under penalties of perjury, I certify that:</br>
+              1. The number shown on this form is my correct taxpayer identification number (or I am waiting for a
+              number to be issued to me); and</br>
+              2. I am not subject to backup withholding because: (a) I am exempt from backup withholding, or (b) I have
+              not been notified by the Internal Revenue Service (IRS) that I am subject to backup withholding as a
+              result of a failure to report all interest or dividends, or (c) the IRS has notified me that I am no
+              longer subject to backup withholding; and</br>
+              3. I am a U.S. citizen or other U.S. person (defined in IRS form W-9); and</br>
+              4. The FATCA code(s) entered on this form (if any) indicating that I am exempt from FATCA reporting is
+              correct.</br>
+            </h5>
+
+          </div>
+
+        </div>
+      </div>
+
+    </fieldset>
+    <!-- Thank You Page -- END -->
+    <fieldset id="page-thanks" class="page no-sign" style="display: none;">
+      <!-- New NavBar -->
+      <div class="navbar">
+        <p>All Finished!</p>
+      </div>
+      <progress id="progress" value="100" max="100"></progress>
+
+      <div class="form--body">
+        <div class="large--text">
+          <h1>Thanks for applying. Please stand by for your decision.</h1>
+        </div>
+        <div class="body--text">
+
+          <h2>
+            We will email your status. You should hear back in 24 hours.
+          </h2>
+          <h2>
+            In the meanwhile, maybe do this instead.
+          </h2>
+
+        </div>
+      </div>
+    </fieldset>
+
+
+    <!-- Legal Page -- No Sign -->
+    <fieldset id="page-legal" class="page no-sign" style="display: none;">
+      <div class="navbar">
+        <p><i class="fas fa-arrow-left nav" style="position: absolute; left: 20px;" onclick="legalBack()"></i>Disclosure
+          type - no sign <i class="fa fa-download" style="position: absolute; right: 20px;" aria-hidden="true"></i></p>
+      </div>
+      <div class="form--body">
+        <div class="large--text">
+
+        </div>
+        <div id="legal--text" class="body--text">
+          <p>Effective on the date of the merger, any agreement, disclosure, form or instrument naming SunTrust as a
+            party, constitutes a valid and binding obligation with Truist even though the documents reference SunTrust
+            as the party in interest. The documents shall be read with Truist in place of SunTrust.
+            </br></br>
+            The terms and conditions of any agreement, disclosure, form or instrument shall remain in effect unless
+            modified or amended in accordance with any such provision contained therein.
+          <h2>
+            Consumer Privacy
+          </h2>
+          Your privacy is important at Truist and we are committed to maintaining and protecting your personal
+          information. After the merger date, accounts opened at SunTrust will continue to be governed by the SunTrust
+          privacy policy up to the date of conversion of the operating systems to Truist. We will keep you informed as
+          to any changes to the privacy policy that may occur upon conversion to Truist.
+          </br></br>
+          For any account opened after the merger date, you will still be able to manage your privacy choices for Truist
+          to fit your particular needs.
+          <h2>
+            Fraud Protection
+          </h2>
+          Protecting your information and identity is our priority. SunTrust will never send unsolicited emails, phone
+          calls or texts asking you to provide, update or verify your personal or account information, such as
+          passwords, Social Security numbers, personal identification numbers (PINs), credit or debit card numbers. If
+          you receive a suspicious call or if you believe your account security has been compromised, call us
+          immediately at 800.447.8994.
+          </br></br>
+          Discover what you can do to avoid scams with the help of our security tools, tips, and resources on
+          suntrust.com/security. </p>
+        </div>
+      </div>
+    </fieldset>
+    <div id="btn--group">
+      <button id="nextBtn" onclick="nextPrev(1); ">Next</button>
+      <button id="subBtn" onclick="lastPageSkip(); ">Finish</button>
+    </div>
+
+  </form>
+
+  <script src="js/main.js"></script>
+  <!-- <script src="js/input-mask.js"></script> -->
+
+</body>

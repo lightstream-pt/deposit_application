@@ -1,0 +1,914 @@
+// LightStream Theme Variables
+//  -----------------------------
+
+//  Colors
+//  -----------------------------
+
+$ls-white: #fff;
+$ls-gray-100: #eee;
+$ls-gray-200: #bec0c2;
+$ls-gray-300: #969696;
+$ls-gray-400: #666;
+$ls-gray-500: #414141;
+$ls-black: #000;
+
+$ls-alternative-lightgold: #ffeb96;
+$ls-alternative-gold: #ffdc50;
+$ls-primary-gold: #f8bf00;
+$ls-sunrise-gold: #f5a623;
+$ls-secondary-gold: #ef7622;
+$ls-sunrise-red: #e8262b;
+
+$ls-primary-lightblue: #d4eefc;
+$ls-alternative-lightblue: #9bdcfa;
+$ls-secondary-blue: #38acff;
+$ls-alternative-blue: #3c78aa;
+$ls-link-blue: #0068a8;
+$ls-primary-darkblue: #003b71;
+$ls-text-darkblue: #00285f;
+
+$ls-environment-green: #4b7d32;
+
+/////////
+
+$ls-font-temp: 'Montserrat', sans-serif;
+$ls-font-temp-bold: 700;
+$ls-font-temp-semibold: 600;
+$ls-font-temp-regular: 400;
+$ls-font-temp-light: 100;
+
+
+$ls-font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+$ls-font-weight-bold: 700;
+$ls-font-weight-semibold: 600;
+$ls-font-weight-medium: 500;
+$ls-font-weight-regular: 400;
+$ls-font-weight-light: 300;
+$ls-cite-font-style: normal;
+$ls-disclosure-line-height: 1.2;
+
+// Responsive Break-points
+$mediaMaxWidth: 1260px;
+$mediaMedWidth: 960px;
+$mediaTablet: 768px;
+$mediaMinWidth: 480px;
+
+//  Typography
+//  -----------------------------
+/// JD /// Temp going to use Montserrat while waiting for Proxima
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+/// Added Proxima Nova for demo from some web source ///
+@font-face {
+	font-family: 'proxima_nova_rgregular';
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proxima_nova_rgbold';
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'adelle_rgregular';
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.svg#adelle_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body, p{
+	font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+}
+h1, h2, h3{
+   font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+}
+    h3 {
+        color: #00285F;
+        /* font-family: "Proxima Nova"; */
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 25.2px;
+    }
+h4{
+  color: #868686;
+  font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+  font-size: 12.8px;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin:0;
+  padding:1px;
+}
+h5{
+  color: #000;
+  font-family: $ls-font-weight-light;
+  font-size: 11.8px;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin:0;
+  padding:1px;
+  font-weight: 400;
+}
+
+
+.hidden {
+    display: none;
+    transition: display 1s ease-in-out;
+}
+
+button,
+input[type="submit"i]
+ {
+    all: unset;
+}
+
+fieldset {
+    border: none;
+  padding: 0;
+    margin: 0;
+}
+.form--body{
+  padding: 20px;
+}
+
+
+body {
+    background: $ls-white;
+    // margin: 50px auto;
+    margin: 0px auto 50px auto;
+    border-radius: 40px;
+    // padding: 30px;
+    font-family: $ls-font-temp;
+    position: relative;
+    // width: 100vw;
+    max-width: 1250px;
+    #container {
+        overflow-y: scroll;
+        //height: 775px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    #container::-webkit-scrollbar {
+        display: none;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 21.6px;
+        font-weight: $ls-font-temp-regular;
+        margin-top: 0px;
+        margin-bottom: 35px;
+    }
+
+    a {
+        font-size: 18px;
+        color: $ls-text-darkblue;
+        font-weight: $ls-font-weight-semibold;
+        text-decoration: none !important;
+    }
+
+    .addbutton {
+        background-color: none !important;
+        color: none;
+        // margin: 10px 0px 20px;
+
+    }
+
+}
+
+.body--text {
+
+    h2 {
+        color: $ls-black;
+        font-size: 18px;
+        line-height: 21.6px;
+        font-weight: $ls-font-weight-medium;
+        margin: 15px 0px 15px 0px;
+    }
+
+
+}
+
+.large--text {
+    h1 {
+        font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+        color: $ls-text-darkblue;
+        font-size: 32px;
+        line-height: 36px;
+        font-weight: $ls-font-temp-bold;
+        // margin-top: 50px; //temp
+    }
+
+    h2 {
+        color: $ls-black;
+        font-size: 18px;
+        line-height: 21.6px;
+        font-weight: $ls-font-weight-medium;
+        margin: 15px 0px 15px 0px;
+    }
+
+
+}
+
+
+
+#btn--group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#subBtn,
+#nextBtn {
+    cursor: pointer;
+    background: $ls-primary-gold;
+    color: $ls-text-darkblue;
+    font-weight: $ls-font-temp-semibold;
+    font-family: inherit;
+    // innerHTML is used in JS code
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top:15px;
+    border-radius: 24px;
+    height: 48px;
+    width: 343.91px;
+}
+#subBtn{
+    display: none;
+}
+#subBtn.active{
+    display: flex;
+}
+
+
+// #save--btn {
+//     cursor: pointer;
+//     background: $ls-white;
+//     color: $ls-text-darkblue;
+//     font-weight: $ls-font-temp-semibold;
+//     letter-spacing: .6px;
+//     text-transform: uppercase;
+//     font-family: inherit;
+//     align-items: center;
+//     display: flex;
+//     font-size: 16px;
+//     height: 50px;
+//     justify-content: center;
+//     overflow: hidden;
+//     width: 300px;
+//     margin: 24px auto;
+//     box-sizing: border-box;
+//     border: 2px solid $ls-primary-darkblue;
+
+//     &:hover {
+//         color: $ls-white;
+//         background-color: $ls-primary-darkblue;
+//     }
+
+//     &.active {
+//         color: $ls-white;
+//         background-color: $ls-primary-darkblue;
+//     }
+
+// }
+
+// Input Fields
+
+
+.input-group {
+    position: relative;
+    transition: opacity 0.18s ease-in-out;
+    // width: calc(100% - 10px);
+    width: 100%;
+
+    input,
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="textarea"],
+    select,
+    textarea,
+    input[type="date" i] {
+        position: relative;
+        width: 100%;
+        min-height: 60px;
+        border: 1px solid #B1B1B8;
+        border-radius: 10px;
+        font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        outline: 0;
+        background: transparent;
+        box-shadow: none;
+        padding-left: 10px;
+
+        // &::placeholder {
+        //     font-size: 17px;
+        //     line-height: 22px;
+        //     color: #666666;
+        //     font-weight: $ls-font-temp-regular;
+        //     font-family: $ls-font-temp;
+        //     margin-top: 0px;
+        //     margin-bottom: 35px;
+        //     padding-left: 2px;
+
+        // }
+    }
+    select,  input[type="date"]{
+        font-family: 'proxima_nova', Helvetica, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 22px;
+        font-weight: 300;
+        letter-spacing: .5px;
+        color: #666666;
+
+    }
+    input[type="date"]{
+        text-transform: uppercase;
+    }
+
+
+    input:focus {
+        outline: 0;
+        border-color: #777;
+
+        &::placeholder {
+            color: #777;
+        }
+    }
+
+    button.addbutton {
+        background: none;
+        border: none;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    #country-primary, #incomePrimary{
+        margin-bottom: 15px;
+    }
+
+    .add-field {
+        padding-bottom: 10px; // temp
+    }
+    // .half--field {
+    //     position: relative;
+    //     width: 49%;
+    //     display: inline-block;
+    #show,
+    #show2,
+    .years {
+        position: absolute;
+        top: 20px;
+        /* transform: translateY(-55%); */
+        right: 10px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .years,
+    .months {
+        position: absolute;
+        top: 13px;
+        /* transform: translateY(-55%); */
+        right: 20px;
+        user-select: none;
+        font-weight: $ls-font-temp-bold;
+    }
+
+    // Validation stuff
+    i {
+        visibility: hidden;
+        position: absolute;
+        top: 25%;
+        right: 10px;
+    }
+
+    small {
+        color: #e74c3c;
+        position: relative;
+        top: 5px;
+        left: 0;
+        visibility: hidden;
+    }
+}
+
+// Validation Input Border + FA Icon
+.input-group.success {
+    input {
+        border: 1px solid #2ecc71;
+    }
+
+    i.fa-check-circle {
+        color: #2ecc71;
+        visibility: visible;
+    }
+}
+
+.input-group.error {
+    margin-bottom: 25px;
+    input {
+        width: 100%;
+        border: 1px solid #e74c3c;
+
+        // margin: 5px 0px;
+    }
+
+    i.fa-exclamation-circle {
+        color: #e74c3c;
+        visibility: visible;
+    }
+
+    small {
+        visibility: visible;
+    }
+
+}
+
+.select.error {
+    border: 1px solid #e74c3c;
+    small {
+        visibility: visible;
+
+    }
+    i.fa-exclamation-circle {
+        color: #e74c3c;
+        visibility: visible;
+    }
+}
+.loan--btn--group {
+    display: flex;
+    flex-wrap: wrap;
+    // padding: 15px 10px;
+}
+
+.loan--btn,
+input[type=button] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 25%;
+    width: 0;
+    height: auto;
+    min-height: 50px;
+    text-align: center;
+    padding: 20px;
+    margin: 5px 10px 10px 0;
+    border: 1px solid $ls-primary-darkblue;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: inherit;
+
+    &:hover {
+        color: $ls-white;
+        background-color: $ls-primary-darkblue;
+
+        .text--reg,
+        .text--med,
+        .text--small {
+            color: $ls-white;
+        }
+    }
+
+    &.active {
+        color: $ls-white;
+        background-color: $ls-primary-darkblue;
+
+        .text--reg,
+        .text--med,
+        .text--small {
+            color: $ls-white;
+        }
+    }
+}
+
+.loan--btn-med {
+    flex: 1 1 0 !important;
+    width: 0;
+}
+
+.text--reg {
+    color: $ls-text-darkblue;
+    font-family: $ls-font-temp;
+    font-weight: $ls-font-temp-semibold;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: .6px;
+    white-space: normal;
+}
+
+.text--reg--alt {
+    color: $ls-text-darkblue;
+    font-family: $ls-font-temp;
+    font-weight: $ls-font-temp-semibold;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: .6px;
+    white-space: normal;
+}
+
+.text--med {
+    color: $ls-text-darkblue;
+    font-family: $ls-font-temp;
+    font-weight: $ls-font-temp-regular;
+    font-size: 12px;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.text--small {
+    color: $ls-gray-500;
+    font-family: $ls-font-temp;
+    font-weight: $ls-font-temp-light;
+    font-size: 12px;
+    font-style: italic;
+    padding: 5px;
+}
+
+
+// // Tooltips
+
+// .tooltip {
+//     width: 100%;
+//     text-align: left;
+//     color: #000;
+//     background: rgb(255, 255, 255);
+//     border: 0px solid #000;
+//     border-radius: 5px;
+//     box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 0px;
+//     position: relative;
+//     max-height: 0px;
+//     border-radius: 5px;
+//     padding: 0px;
+//     // margin-top: 15px;
+//     overflow: hidden;
+//     // transition: all 200ms ease-out;
+
+//     p {
+//         font-size: 12px;
+//         line-height: 12px;
+//         padding: 10px;
+//         margin: 0;
+//     }
+
+//     ul {
+//         font-size: 12px;
+//         margin: 0px 0px 20px 20px;
+//         padding: 0;
+
+//         li {
+//             list-style-type: disc;
+//             list-style-position: inside;
+//             padding-bottom: 2px;
+//         }
+//     }
+// }
+
+// // input:not([type="submit"]):hover+.tooltip,
+// input:not([type="submit"]):focus+.tooltip,
+// input:not([type="submit"]):active+.tooltip {
+
+//     max-height: 1000px;
+//     width: auto;
+//     border: 1px solid #000;
+//     border-radius: 5px;
+//     padding: 0px;
+//     margin-top: 15px;
+//     // transition: all 200ms ease-in;
+//     overflow: visible;
+
+//     // box-shadow: rgba(89, 89, 89, 0.3) 0 2px 10px;
+//     p {
+//         font-size: 12px;
+//         line-height: 15px;
+//         padding: 20px 30px 20px 30px;
+//         margin: 0;
+//     }
+
+//     ul {
+//         font-size: 12px;
+//         line-height: 12px;
+//         margin: 0px 0px 30px 30px;
+//         padding: 0;
+
+//         li {
+//             list-style-type: disc;
+//             list-style-position: inside;
+//             padding-bottom: 5px;
+//         }
+//     }
+// }
+
+// .tooltip:before {
+//     content: '';
+//     display: block;
+//     position: absolute;
+//     left: 40px;
+//     bottom: 100%;
+//     width: 0;
+//     height: 0;
+//     border: 10px solid transparent;
+//     border-bottom-color: black;
+// }
+
+// .tooltip:after {
+//     content: '';
+//     display: block;
+//     position: absolute;
+//     left: 41px;
+//     bottom: 100%;
+//     width: 0;
+//     height: 0;
+//     border: 9px solid transparent;
+//     border-bottom-color: white;
+// }
+
+// #thank-you-check{
+//     color:#2ecc71;
+//     font-size:200px;
+//     padding: 30px;
+//     display: flex;
+//     justify-content: center;
+// }
+
+/////////// NEW 03/21 /////////////
+
+.navbar{
+  height: 60px;
+  background-color:$ls-primary-darkblue;
+  width:100%;
+  p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: #FFFFFF;
+    font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.2px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+.btn--small{
+  border:1px solid #000;
+  padding:4px 6px;
+  font-weight:$ls-font-weight-semibold;
+  &:hover{
+    background-color:$ls-primary-darkblue;
+    color:white;
+    // font-weight: $ls-font-weight-light;
+  }
+}
+
+select{
+    text-transform: none !important;
+  }
+
+/// New Nav Stuff
+
+progress{
+  -webkit-appearance: none;
+  appearance: none;
+  position:absolute;
+  width:100%;
+  height:8px;
+  margin:0;
+  padding:0;
+}
+progress[value]::-webkit-progress-bar {
+  background-color: #fff;
+  // border-radius: 2px;
+  // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-webkit-progress-value {
+  background-color:#F0CD00;
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+i.fas.fa-arrow-left.nav {
+    cursor: pointer;
+}
+
+// New Label Transition Treatment -- CSS only
+
+.input-label{
+    position: absolute;
+    top:20px;
+    left: 10px;
+    overflow: auto;
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: $ls-font-temp-regular;
+    transition: 0.2s ease-in-out;
+    color:#666666;
+}
+.input-group .input-field:focus + .input-label {
+    top:-10px;
+    font-size: 12px;
+    line-height: 14px;
+    background-color: #fff;
+    padding: 3px;
+
+}
+
+.input-group.error .input-label {
+    color: #e8262b;
+    top:-10px;
+    font-size: 12px;
+    line-height: 14px;
+    background-color: #fff;
+    padding: 3px;
+}
+.input-group.error .input-field:focus + .input-label {
+   color: #e8262b;
+   visibility: visible;
+}
+
+.input-group.success .input-label {
+    color: #2ecc71;
+    top:-10px;
+    font-size: 12px;
+    line-height: 14px;
+    background-color: #fff;
+    padding: 3px;
+}
+.input-group.success .input-field:focus + .input-label {
+    color: #2ecc71;
+}
+
+
+
+
+
+
+  // Checkboxes and labels
+
+//   label.check-label {
+//     color: #000000;
+//     font-family: inherit;
+//     font-size: 13px;
+//     font-weight: 500;
+//     letter-spacing: 0;
+//     line-height: 18px;
+//     display: inline-block;
+//     max-width: 80%;
+// }
+input.input-check {
+    height: auto;
+    width: 30px;
+    border: 1px solid #333333;
+    border-radius: 2px;
+    display: inline-block;
+    vertical-align: top;
+}
+.termsText{
+    display: inline-block;
+    width: 75%;
+    padding: 15px;
+    font-weight: 500;
+}
+// Legal
+.legal{
+    background-color: #D8D8D8;
+    padding: 15px;;
+}
+.legalText{
+    // font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+.smallLink {
+    color: blue;
+    font-family: 'Montserrat';
+    font-size: 11.8px;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin: 0;
+    padding: 1px;
+    font-weight: 400;
+}
+
+// Form Data
+
+table{
+    width:100%;
+    border-spacing: 0px;
+    margin: 35px 0px;
+  }
+  td{
+      padding: 20px 0px;
+      border-bottom: 1px solid #EEEEEE;
+  }
+  th{
+      text-align: left;
+      color: #00285F;
+      /* font-family: "Proxima Nova"; */
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 25.2px;
+  }
+  .tdLabel {
+    color: #000000;
+    /* font-family: "Proxima Nova"; */
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 19px;
+}
+.tdData{
+    // Temp Font
+    font-family:$ls-font-temp;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-align: right;
+    font-weight: 100;
+}
+
+
+//// New Password Treatment
+
+.password-policies {
+    padding: 5px;
+
+    .policy-length, .policy-number, .policy-special {
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 21px;
+    }
+
+    .valid {
+        color: #2ecc71;
+    }
+    .invalid {
+        color: #e8262b;
+    }
+
+}
+
+i.fa-valid {
+    visibility: visible;
+    position: inherit;
+    margin-right: 4px;
+}
+i.invalid {
+    color: red;
+    visibility: hidden;
+    position: absolute;
+}
+
+
+
+/// Country Error
+i#errorTriangle.invalid {
+    visibility: visible;
+    color: red;
+    position: relative;
+    left: 0px;
+    top: 5px;
+    margin-right: 5px;
+}
+
+// Legal Text Page
+
+#legal--text{
+color: #565656;
+font-family: $ls-font-family;
+font-size: 16px;
+letter-spacing: 0.2px;
+line-height: 19px;
+p{
+    margin-bottom: 0px;
+}
+}
