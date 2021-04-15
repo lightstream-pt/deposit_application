@@ -21,6 +21,7 @@ const securityAnswer = document.getElementById("security-answer");
 
 
 
+
 ///// Multi Step Form Test - Temp -- Check validation and possibly merge
 let currentpage = 0; // Current page is set to be the first page (0)
 showpage(currentpage); // Display the current page
@@ -601,10 +602,7 @@ function incomeData(e) {
 }
 
 
-
 /// For the Font Awesome Icons attached to Password Policies as well as the valid class to the text
-
-
 function checkInvalidity(e) {
   checkLength(e);
   checkNumber(e);

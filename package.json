@@ -1,0 +1,15 @@
+{
+  "name": "deposit_application",
+  "version": "1.0.0",
+  "description": "This is a repository for sharing html mockups, code, and to collaborate on the LightStream loan application.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w docs/scss/ -o docs/css/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
