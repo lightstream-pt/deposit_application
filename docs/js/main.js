@@ -9,6 +9,7 @@ const password2 = document.getElementById("password2");
 const nextButton = document.getElementById("nextBtn");
 const showPass = document.getElementById("show");
 const showPass2 = document.getElementById("show2");
+const showSSN = document.getElementById("showSSN");
 const addCountry = document.getElementById("add--country");
 const addJob = document.getElementById("add--job");
 const employerPrimary = document.getElementById("employerPrimary");
@@ -90,11 +91,10 @@ function validateForm() {
   let x,y,i, valid = true;
   let next = document.getElementById("nextBtn");
   x = document.getElementsByClassName("page");
-  y = x[currentpage].getElementsByTagName("input");
+  y = x[currentpage].getElementsByClassName("input-field");
+  // y = x[currentpage].getElementsByTagName("input");
 
   let err = 0;
-
-
 //////// All Pages ////////
 // Check for empty
   for (i = 0; i < y.length; i++) {
@@ -504,12 +504,23 @@ showPass2.addEventListener("click", function (e) {
     password2.getAttribute("type") === "password" ? "text" : "password";
   password2.setAttribute("type", type);
 });
-// Add an additional field - Done
-addCountry.addEventListener("click", function (e) {
-  let boxes = document.getElementById("add-country");
-  let clone = boxes.firstElementChild.cloneNode(true);
-  boxes.appendChild(clone);
+
+// New
+showSSN.addEventListener("click", function (e) {
+  // toggle the type attribute
+  let type = ssn.getAttribute("type") === "password" ? "text" : "password";
+  ssn.setAttribute("type", type);
 });
+
+
+
+
+// // Add an additional field - Done
+// addCountry.addEventListener("click", function (e) {
+//   let boxes = document.getElementById("add-country");
+//   let clone = boxes.firstElementChild.cloneNode(true);
+//   boxes.appendChild(clone);
+// });
 // addJob.addEventListener("click", function (e) {
 //   let boxes = document.getElementById("add-job");
 //   let clone = boxes.firstElementChild.cloneNode(true);
@@ -519,9 +530,11 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 });
 
-//////// NEW 4/21
 
 
+
+
+///////////////////////////////////////////////////// NEW 4/21
 
 // Adding Data to Final Page
 
@@ -705,7 +718,7 @@ function onSelectChangeCountry(obj) {
 
 function formatSSN(ssn) {
   // remove all non-dash and non-numerals
-  var val = ssn.replace(/[^\d-]/g, '');
+  let val = ssn.replace(/[^\d-]/g, '');
 
   // add the first dash if number from the second group appear
   val = val.replace(/^(\d{3})-?(\d{1,2})/, '$1-$2');
@@ -763,21 +776,70 @@ function editPersonal(e) {
 //   showpage(currentpage);
 //   subBTN.classList.add("active");
 // }
-// Back arrow to hide Legal and show submit page
-function legalBack(e) {
+
+// // On Cick for legal a hrefs // usee the page position within the form
+// function legalDoc(e) {
+//   let x = document.getElementsByClassName("page");
+//   x[currentpage].style.display = "none";
+//   currentpage = 6;
+//   showpage(currentpage);
+//   subBTN.classList.add("active");
+// }
+
+/// Legal Toggle 1 -- This will need to be replaced with jquery or something - works for now
+function legalToggle1(e) {
+  let legal1 = document.getElementById("legal-1");
   let x = document.getElementsByClassName("page");
   x[currentpage].style.display = "none";
+  legal1.style.display = "inline-block";
+  document.getElementById("nextBtn").style.display = "none"; // Remove button for thank you page
+
+}
+// Back arrow to hide Legal
+function legalBack1(e) {
+  let legal1 = document.getElementById("legal-1");
+  legal1.style.display = "none";
   currentpage = 1;
   showpage(currentpage);
+  x[currentpage].style.display = "inline-block";
   subBTN.classList.add("active");
   document.getElementById("nextBtn").style.display = "flex"; // Remove button for thank you page
 }
-// On Cick for legal a hrefs // usee the page position within the form
-function legalDoc(e) {
+/// Legal Toggle 2 -- This will need to be replaced with jquery or something - works for now
+function legalToggle2(e) {
+  let legal2 = document.getElementById("legal-2");
   let x = document.getElementsByClassName("page");
   x[currentpage].style.display = "none";
-  currentpage = 6;
-  showpage(currentpage);
-  subBTN.classList.add("active");
-}
+  legal2.style.display = "inline-block";
+  document.getElementById("nextBtn").style.display = "none"; // Remove button for thank you page
 
+}
+// Back arrow to hide Legal
+function legalBack2(e) {
+  let legal2 = document.getElementById("legal-2");
+  legal2.style.display = "none";
+  currentpage = 2;
+  showpage(currentpage);
+  x[currentpage].style.display = "inline-block";
+  subBTN.classList.add("active");
+  document.getElementById("nextBtn").style.display = "flex"; // Remove button for thank you page
+}
+/// Legal Toggle 3 -- This will need to be replaced with jquery or something - works for now
+function legalToggle3(e) {
+  let legal3 = document.getElementById("legal-3");
+  let x = document.getElementsByClassName("page");
+  x[currentpage].style.display = "none";
+  legal3.style.display = "inline-block";
+  document.getElementById("nextBtn").style.display = "none"; // Remove button for thank you page
+
+}
+// Back arrow to hide Legal
+function legalBack3(e) {
+  let legal3 = document.getElementById("legal-3");
+  legal3.style.display = "none";
+  currentpage = 4;
+  showpage(currentpage);
+  x[currentpage].style.display = "inline-block";
+  subBTN.classList.add("active");
+  document.getElementById("nextBtn").style.display = "flex"; // Remove button for thank you page
+}

@@ -73,7 +73,7 @@
 
             <div class="input-group">
               <input class="input-field" type="email" id="email" name="Email" placeholder="" onblur=" emailData(), checkEmail(this)" >
-              <label class="input-label">Email Address</label>
+              <label class="input-label">Email address</label>
               <h4>Your email address is also your user ID</h4>
               <i class="fas fa-check-circle"></i>
               <i class="fas fa-exclamation-circle"></i>
@@ -82,25 +82,25 @@
             </div>
 
             <div class="input-group">
-              <input class="input-field" id="firstName" name="First Name" placeholder="" onkeyup="" oninput=""
+              <input class="input-field" id="firstName" name="First name" placeholder="" onkeyup="" oninput=""
                 onblur="checkIfEmpty(this), nameData()" >
-              <label class="input-label">First Name</label>
+              <label class="input-label">First name</label>
               <i class="fas fa-check-circle"></i>
               <i class="fas fa-exclamation-circle"></i>
               <small>Error Message</small>
             </div>
             <div class="input-group">
 
-              <input class="input-field" id="lastName" name="Last Name" placeholder="" oninput=""
+              <input class="input-field" id="lastName" name="Last name" placeholder="" oninput=""
                 onblur="checkIfEmpty(this), nameData()" >
-              <label class="input-label" id="lastNameLabel">Last Name</label>
+              <label class="input-label" id="lastNameLabel">Last name</label>
               <i class="fas fa-check-circle"></i>
               <i class="fas fa-exclamation-circle"></i>
               <small>Error Message</small>
             </div>
           </div>
           <div class="input-group">
-            <input class="input-field" type="password" id="password" name="password" placeholder=""
+            <input class="input-field" type="password" id="password" name="Password" placeholder=""
               onblur="checkPasswordsMatch(password, password2)" onkeyup="passwordValidate(this)"
               oninput="checkInvalidity(this); ">
             <label class="input-label">Password</label>
@@ -111,21 +111,21 @@
                   style="font-size:10px;color:transparent;border:1px solid grey;border-radius:100%;height:8px;width:8px;"></i>
                 <i class="fa fa-check" style="font-size:12px;color:#2ecc71;height:8px;width:8px;"></i>
                 <i class="fa fa-times" style="font-size:12px;color:red;height:8px;width:8px;"></i>
-                Must be between 8-20 characters
+                <h5 class="error--text">Must be between 8-20 characters</h5>
               </div>
               <div class="policy-number">
                 <i class="fa fa-circle fa-valid " name="pass-circle"
                   style="font-size:10px;color:transparent;border:1px solid grey;border-radius:100%;height:8px;width:8px;"></i>
                 <i class="fa fa-check" style="font-size:12px;color:#2ecc71;height:8px;width:8px;"></i>
                 <i class="fa fa-times" style="font-size:12px;color:red;height:8px;width:8px;"></i>
-                Must contain at least 1 letter and 1 number
+                <h5 class="error--text">Must contain at least 1 letter and 1 number</h5>
               </div>
               <div class="policy-special">
                 <i class="fa fa-circle fa-valid" name="pass-circle"
                   style="font-size:10px;color:transparent;border:1px solid grey;border-radius:100%;height:8px;width:8px;"></i>
                 <i class="fa fa-check" style="font-size:12px;color:#2ecc71;height:8px;width:8px;"></i>
                 <i class="fa fa-times" style="font-size:12px;color:red;height:8px;width:8px;"></i>
-                It can only consist of numbers, letters, ! & $ - . _
+                <h5 class="error--text">It can only consist of numbers, letters, ! & $ - . _</h5>
               </div>
             </div>
             <!-- This probably needs to be on change after error is thrown by Password2 -->
@@ -135,46 +135,46 @@
           </div>
           <div class="input-group">
 
-            <input type="password" id="password2" name="Password Confirm" class="input-field" placeholder=""
+            <input type="password" id="password2" name="Password confirm" class="input-field" placeholder=""
               oninput="checkPasswordsMatch(password, password2)">
-            <label class="input-label">Re-Enter Your Password</label>
+            <label class="input-label">Confirm password</label>
             <span id="show2">Show</span>
             <small>Error Message</small>
           </div>
 
           <div class="input-group">
             <label class="input-label"></label>
-            <select id="security-question" name="Security Question">
+            <select id="security-question" name="Security question">
               <option value="0">Please select a question</option>
-              <option value="Your first pet?">Your First Pet?</option>
+              <option value="Your first pet?">Your first pet?</option>
               <option value="Mother's maiden name?">Mother's maiden name?</option>
             </select>
             <small>Error Message</small>
           </div>
           <div class="input-group">
-            <input class="input-field" id="security-answer" name="Security Answer" placeholder=""
+            <input class="input-field" id="security-answer" name="Security answer" placeholder=""
               onblur="checkIfEmpty(this)">
-            <label class="input-label">Security Answer</label>
+            <label class="input-label">Security answer</label>
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error Message</small>
           </div>
 
           <div class="input-group">
-            <input class="input-check" type="checkbox" name="terms1"  placeholder="">
+            <input class="input-check" type="checkbox" name="Terms"  placeholder="">
             <label class="check-label"></label>
             <h5 class="termsText">I have read, understood, and consent to LightStream Bank’s <a href="#"
-                class="smallLink" onclick="legalDoc()">ESIGN Agreement</a>.</h5>
+                class="smallLink"onclick="legalToggle1()">ESIGN agreement</a>.</h5>
             <i class="fas fa-check-circle" style="top:15px;"></i>
             <i class="fas fa-exclamation-circle" style="top:15px;"></i>
             <small style="bottom:0;">Error Message</small>
           </div>
           <div class="input-group">
-            <input class="input-check" type="checkbox" name="terms2"  placeholder="">
+            <input class="input-check" type="checkbox" name="Terms 2"  placeholder="">
             <label class="check-label"></label>
             <h5 class="termsText">I have read, understood, and consent to LightStream Bank’s <a href="#" class="smallLink"
-              onclick="legalDoc()">Privacy Policy &
-              Practices</a> and <a href="#" class="smallLink" onclick="legalDoc()">Terms and Conditions</a>.</h5>
+              onclick="legalToggle1()">Privacy Policy &
+              Practices</a> and <a href="#" class="smallLink" onclick="legalToggle1()">Terms and Conditions</a>.</h5>
             <i class="fas fa-check-circle" style="top:15px;"></i>
             <i class="fas fa-exclamation-circle" style="top:15px;"></i>
             <small style="bottom:0;">Error Message</small>
@@ -182,6 +182,52 @@
         </div>
     </div>
     </fieldset>
+
+    <!--Test Legal Toggle-->
+       <!-- Legal Page -- No Sign -->
+       <fieldset id="legal-1" class=" no-sign" style="display: none;">
+        <div class="navbar">
+          <p><i class="fas fa-arrow-left nav" style="position: absolute; left: 20px;" onclick="legalBack1()"></i>Disclosure
+            type - no sign <i class="fa fa-download" style="position: absolute; right: 20px;" aria-hidden="true"></i></p>
+        </div>
+        <div class="form--body">
+          <div class="large--text">
+
+          </div>
+          <div id="legal--text" class="body--text">
+            <p>Effective on the date of the merger, any agreement, disclosure, form or instrument naming SunTrust as a
+              party, constitutes a valid and binding obligation with Truist even though the documents reference SunTrust
+              as the party in interest. The documents shall be read with Truist in place of SunTrust.
+              </br></br>
+              The terms and conditions of any agreement, disclosure, form or instrument shall remain in effect unless
+              modified or amended in accordance with any such provision contained therein.
+            <h2>
+              Consumer Privacy
+            </h2>
+            Your privacy is important at Truist and we are committed to maintaining and protecting your personal
+            information. After the merger date, accounts opened at SunTrust will continue to be governed by the SunTrust
+            privacy policy up to the date of conversion of the operating systems to Truist. We will keep you informed as
+            to any changes to the privacy policy that may occur upon conversion to Truist.
+            </br></br>
+            For any account opened after the merger date, you will still be able to manage your privacy choices for Truist
+            to fit your particular needs.
+            <h2>
+              Fraud Protection
+            </h2>
+            Protecting your information and identity is our priority. SunTrust will never send unsolicited emails, phone
+            calls or texts asking you to provide, update or verify your personal or account information, such as
+            passwords, Social Security numbers, personal identification numbers (PINs), credit or debit card numbers. If
+            you receive a suspicious call or if you believe your account security has been compromised, call us
+            immediately at 800.447.8994.
+            </br></br>
+            Discover what you can do to avoid scams with the help of our security tools, tips, and resources on
+            suntrust.com/security. </p>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- END Legal Test -->
+
     <!------- PAGE 2 ------->
     <fieldset id="page-2" class="page">
       <div class="navbar">
@@ -203,8 +249,7 @@
             <small>Error Message</small>
           </div>
           <div class="input-group">
-            <input class="input-field" id="address2" name="Address 2" placeholder="" oninput="checkIfEmpty(this)"
-              onblur="addressData()">
+            <input class="input" id="address2" name="Address line 2" placeholder="" onblur="addressData()" tagname="none">
             <label class="input-label">Apt, Suite</label>
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
@@ -229,7 +274,7 @@
           <div class="input-group">
             <input class="input-field" id="zip" name="Zip Code" placeholder="" oninput="checkIfEmpty(this)"
               onblur="addressData()">
-            <label class="input-label">Zip Code</label>
+            <label class="input-label">Zip code</label>
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error Message</small>
@@ -237,10 +282,10 @@
           <div class="input-group">
             <input class="input-field" type="text" id="phone" name="Phone" placeholder="" onfocus="numberOnly(this)"
               oninput="checkNumberInput(this, 10, 10)" onblur="phoneData()">
-            <label class="input-label">Phone Number</label>
+            <label class="input-label">Phone number</label>
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
-            <h4>Please use your best contact number in case we need to verify information. As part of our <a href="#" class="smallLink" onclick="legalDoc()">TCPA agreement</a>, your number cannot be used for marketing purposes.</h4>
+            <h4>Please use your best contact number in case we need to verify information. As part of our <a href="#" class="smallLink" onclick="legalToggle2()">TCPA agreement</a>, your number cannot be used for marketing purposes.</h4>
             <small>Error Message</small>
 
           </div>
@@ -248,6 +293,54 @@
         </div>
       </div>
     </fieldset>
+
+    <!--Test Legal Toggle-->
+       <!-- Legal Page -- No Sign -->
+       <fieldset id="legal-2" class=" no-sign" style="display: none;">
+        <div class="navbar">
+          <p><i class="fas fa-arrow-left nav" style="position: absolute; left: 20px;" onclick="legalBack2()"></i>Disclosure
+            type - no sign <i class="fa fa-download" style="position: absolute; right: 20px;" aria-hidden="true"></i></p>
+        </div>
+        <div class="form--body">
+          <div class="large--text">
+
+          </div>
+          <div id="legal--text" class="body--text">
+            <p>Effective on the date of the merger, any agreement, disclosure, form or instrument naming SunTrust as a
+              party, constitutes a valid and binding obligation with Truist even though the documents reference SunTrust
+              as the party in interest. The documents shall be read with Truist in place of SunTrust.
+              </br></br>
+              The terms and conditions of any agreement, disclosure, form or instrument shall remain in effect unless
+              modified or amended in accordance with any such provision contained therein.
+            <h2>
+              Consumer Privacy
+            </h2>
+            Your privacy is important at Truist and we are committed to maintaining and protecting your personal
+            information. After the merger date, accounts opened at SunTrust will continue to be governed by the SunTrust
+            privacy policy up to the date of conversion of the operating systems to Truist. We will keep you informed as
+            to any changes to the privacy policy that may occur upon conversion to Truist.
+            </br></br>
+            For any account opened after the merger date, you will still be able to manage your privacy choices for Truist
+            to fit your particular needs.
+            <h2>
+              Fraud Protection
+            </h2>
+            Protecting your information and identity is our priority. SunTrust will never send unsolicited emails, phone
+            calls or texts asking you to provide, update or verify your personal or account information, such as
+            passwords, Social Security numbers, personal identification numbers (PINs), credit or debit card numbers. If
+            you receive a suspicious call or if you believe your account security has been compromised, call us
+            immediately at 800.447.8994.
+            </br></br>
+            Discover what you can do to avoid scams with the help of our security tools, tips, and resources on
+            suntrust.com/security. </p>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- END Legal Test -->
+
+
+
     <!------- PAGE 3 ------->
     <fieldset id="page-3" class="page">
       <div class="navbar">
@@ -281,8 +374,8 @@
             </div> -->
             <div class="input-group">
               <label class="input-label"></label>
-              <input class="input-field" type="date" id="dob" name="Date of Birth" placeholder="" onfocus=""
-                onblur="dobData()">
+              <input class="input-field" type="date" id="dob" name="Date of birth" placeholder="" onfocus=""
+                onblur="dobData(), checkIfEmpty(this);">
               <!--type="text" onfocus="(this.type='date')"
                         <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
@@ -305,11 +398,12 @@
                 <i id="errorTriangle" class="fas fa-exclamation-triangle"></i><small style="bottom:0;">Error
                   Message</small>
               </div>
-              <button id="add--country" class="addbutton"> + Add another country of citizenship</button>
+              <!-- <button id="add--country" class="addbutton"> + Add another country of citizenship</button> -->
             </div>
             <div class="input-group">
-              <input id="SSN" name="Social Security Number" class="input-field" onblur="ssnData(this)" />
-              <label class="input-label">Social Security Number</label>
+              <input id="SSN" name="Social Security number" class="input-field" type="password" onblur="ssnData(this)" />
+              <label class="input-label">Social Security number</label>
+              <span id="showSSN">Show</span>
               <i class="fas fa-check-circle"></i>
               <i class="fas fa-exclamation-circle"></i>
               <h4>We are  to report the interest that you earn to the IRS so that you may be taxed on that income</h4>
@@ -319,7 +413,7 @@
             <input class="input-field" id="job" name="Job" onblur="jobData(), checkIfEmpty(this); ">
             <label class="input-label">Occupation</label>
             <i class="fas fa-check-circle" style="top:15px;"></i>
-            <i class="fas fa-exclamation-circle" style="top:15px;"></i>
+            <i class="fas fa-exclamation-circle" ></i>
             <h4>We use your occupation as part of our efforts to reduce anti-money laundering activities</h4>
             <small style="bottom:0;">Error Message</small>
 
@@ -331,18 +425,18 @@
               <i class="fas fa-exclamation-circle" style="top:15px;"></i>
               <small style="bottom:0;">Error Message</small>
             </div> -->
-            <div>
-              <h5><b>Important information about procedures for opening a new account:</b>  To help the government fight the funding of terrorism and money laundering activities, federal law requires all financial institutions to obtain, verify, and record information that identifies each person who opens an account. What this means for you: When you open an account, we will use your name, address, date of birth and other information provided to identify you.</h5>
-            </div>
-
           </div>
+          <div>
+            <h5><b>Important information about procedures for opening a new account:</b>  To help the government fight the funding of terrorism and money laundering activities, federal law requires all financial institutions to obtain, verify, and record information that identifies each person who opens an account. What this means for you: When you open an account, we will use your name, address, date of birth and other information provided to identify you.</h5>
+          </div>
+
         </div>
     </fieldset>
 
     <!-- Submit Page -->
     <fieldset id="page-end" class="page">
       <div class="navbar">
-        <p><i class="fas fa-arrow-left nav" style="position: absolute; left: 20px;"></i>Step 4 of 4: Review and submit
+        <p><i class="fas fa-arrow-left nav" style="position: absolute; left: 20px;" onclick="Prev(1);"></i>Step 4 of 4: Review and submit
         </p>
       </div>
       <progress id="progress" value="100" max="100"></progress>
@@ -356,12 +450,12 @@
           <div class="form--output">
             <table>
               <tr>
-                <th>Personal Info <a href="#" id="personalChange" class="smallLink" onclick="editPersonal()">[Edit]</a>
+                <th>Personal Info
                 </th>
-                <th></th>
+                <th class="tdData"><a href="#" id="personalChange" class="smallLink" onclick="editPersonal()">[Edit]</a></th>
               </tr>
               <tr>
-                <td class="tdLabel">Full Name</td>
+                <td class="tdLabel">Full name</td>
                 <td id="nameDataTest" class="tdData">Form Data Goes Here</td>
               </tr>
               <tr>
@@ -373,7 +467,7 @@
                 <td id="addressDataTest" class="tdData">Form Data Goes Here</td>
               </tr>
               <tr>
-                <td class="tdLabel">Phone Number</td>
+                <td class="tdLabel">Phone number</td>
                 <td id="phoneDataTest" class="tdData">Form Data Goes Here</td>
               </tr>
             </table>
@@ -381,11 +475,11 @@
           <div class="form--output">
             <table>
               <tr>
-                <th>Identity Info <a href="#" id="idChange" class="smallLink" onclick="editID()">[Edit]</a></th>
-                <th></th>
+                <th>Identity info</th>
+                <th class="tdData"><a href="#" id="idChange" class="smallLink" onclick="editID()">[Edit]</a></th>
               </tr>
               <tr>
-                <td class="tdLabel">Date of Birth</td>
+                <td class="tdLabel">Date of birth</td>
                 <td id="dobDataTest" class="tdData">Form Data Goes Here</td>
               </tr>
               <tr>
@@ -410,7 +504,7 @@
             <input class="input-check" type="checkbox" name="terms1"  placeholder="">
             <label class="check-label"></label>
             <h5 class="termsText">I have read, understood, and consent to LightStream Bank’s <a href="#"
-                class="smallLink" onclick="legalDoc()">Credit Authorization Act</a>.</h5>
+                class="smallLink" onclick="legalToggle3()">Credit Authorization Act</a>.</h5>
             <i class="fas fa-check-circle" style="top:15px;"></i>
             <i class="fas fa-exclamation-circle" style="top:15px;"></i>
             <small style="bottom:0;">Error Message</small>
@@ -436,6 +530,51 @@
       </div>
 
     </fieldset>
+
+     <!--Test Legal Toggle-->
+       <!-- Legal Page -- No Sign -->
+       <fieldset id="legal-3" class=" no-sign" style="display: none;">
+        <div class="navbar">
+          <p><i class="fas fa-arrow-left nav" style="position: absolute; left: 20px;" onclick="legalBack3()"></i>Disclosure
+            type - no sign <i class="fa fa-download" style="position: absolute; right: 20px;" aria-hidden="true"></i></p>
+        </div>
+        <div class="form--body">
+          <div class="large--text">
+
+          </div>
+          <div id="legal--text" class="body--text">
+            <p>Effective on the date of the merger, any agreement, disclosure, form or instrument naming SunTrust as a
+              party, constitutes a valid and binding obligation with Truist even though the documents reference SunTrust
+              as the party in interest. The documents shall be read with Truist in place of SunTrust.
+              </br></br>
+              The terms and conditions of any agreement, disclosure, form or instrument shall remain in effect unless
+              modified or amended in accordance with any such provision contained therein.
+            <h2>
+              Consumer Privacy
+            </h2>
+            Your privacy is important at Truist and we are committed to maintaining and protecting your personal
+            information. After the merger date, accounts opened at SunTrust will continue to be governed by the SunTrust
+            privacy policy up to the date of conversion of the operating systems to Truist. We will keep you informed as
+            to any changes to the privacy policy that may occur upon conversion to Truist.
+            </br></br>
+            For any account opened after the merger date, you will still be able to manage your privacy choices for Truist
+            to fit your particular needs.
+            <h2>
+              Fraud Protection
+            </h2>
+            Protecting your information and identity is our priority. SunTrust will never send unsolicited emails, phone
+            calls or texts asking you to provide, update or verify your personal or account information, such as
+            passwords, Social Security numbers, personal identification numbers (PINs), credit or debit card numbers. If
+            you receive a suspicious call or if you believe your account security has been compromised, call us
+            immediately at 800.447.8994.
+            </br></br>
+            Discover what you can do to avoid scams with the help of our security tools, tips, and resources on
+            suntrust.com/security. </p>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- END Legal Test -->
     <!-- Thank You Page -- END -->
     <fieldset id="page-thanks" class="page no-sign" style="display: none;">
       <!-- New NavBar -->

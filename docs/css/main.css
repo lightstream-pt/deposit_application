@@ -205,6 +205,7 @@ body {
     padding-bottom: 10px; }
   .input-group #show,
   .input-group #show2,
+  .input-group #showSSN,
   .input-group .years {
     position: absolute;
     top: 20px;
@@ -223,7 +224,7 @@ body {
   .input-group i {
     visibility: hidden;
     position: absolute;
-    top: 25%;
+    top: 22px;
     right: 10px; }
   .input-group small {
     color: #e74c3c;
@@ -531,3 +532,8 @@ i#errorTriangle.invalid {
   line-height: 19px; }
   #legal--text p {
     margin-bottom: 0px; }
+
+.error--text {
+  display: inline-block;
+  max-width: 80%;
+  vertical-align: top; }
