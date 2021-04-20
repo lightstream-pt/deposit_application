@@ -432,6 +432,10 @@ body {
         visibility: visible;
     }
 }
+select{
+    -moz-appearance:none !important;
+
+}
 .loan--btn--group {
     display: flex;
     flex-wrap: wrap;

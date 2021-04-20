@@ -259,6 +259,9 @@ body {
     color: #e74c3c;
     visibility: visible; }
 
+select {
+  -moz-appearance: none !important; }
+
 .loan--btn--group {
   display: flex;
   flex-wrap: wrap; }
